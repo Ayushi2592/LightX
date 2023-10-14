@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "434357267172",
+    "project_id": "lightx-a4a0d",
+    "storage_bucket": "lightx-a4a0d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:434357267172:android:f3663484f9a518507ddaf1",
+        "android_client_info": {
+          "package_name": "com.example.light_x"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbiPVyg7o_NvJaQtO_Pzow1MFI6cUpN9I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
