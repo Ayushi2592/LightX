@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:light_x/screens/active_complaints.dart';
 import 'package:light_x/screens/home_screen.dart';
 import 'package:light_x/screens/login_screen.dart';
 import 'package:light_x/screens/registration_screen.dart';
@@ -30,6 +31,7 @@ class OnlineAttendance extends StatelessWidget {
         LoginScreen.id : (context) => LoginScreen(),
         RegistrationScreen.id : (context) => RegistrationScreen(),
         HomeScreen.id : (context) => HomeScreen(),
+        ActiveComplaintScreen.id : (context) => ActiveComplaintScreen(),
 
 
 
