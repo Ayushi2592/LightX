@@ -1,8 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:light_x/screens/home_screen.dart';
 import 'package:light_x/screens/login_screen.dart';
 import 'package:light_x/screens/registration_screen.dart';
+import 'package:light_x/screens/splash_screen.dart';
 
 
 
@@ -22,10 +24,12 @@ class OnlineAttendance extends StatelessWidget {
       theme : ThemeData(
         scaffoldBackgroundColor: Color(0xFF212325),
       ),
-      initialRoute: LoginScreen.id,
+      initialRoute: SplashScreen.id,
       routes: {
+        SplashScreen.id : (context) => SplashScreen(),
         LoginScreen.id : (context) => LoginScreen(),
         RegistrationScreen.id : (context) => RegistrationScreen(),
+        HomeScreen.id : (context) => HomeScreen(),
 
 
 

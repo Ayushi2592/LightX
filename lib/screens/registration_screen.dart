@@ -2,6 +2,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 
+import 'home_screen.dart';
+
 
 class RegistrationScreen extends StatefulWidget {
   static const String id = 'registration_screen';
@@ -18,7 +20,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
 
   // our form key
   final _formKey = GlobalKey<FormState>();
-
   // editing Controller
   final firstNameEditingController = new TextEditingController();
   final secondNameEditingController = new TextEditingController();
@@ -54,10 +55,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           ),
-          enabledBorder: OutlineInputBorder(
-            borderSide:
-            BorderSide(color: Colors.black, width: 1.0),
-          ),
         ));
 
     //second name field
@@ -81,10 +78,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           hintText: "Second Name",
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderSide:
-            BorderSide(color: Colors.black, width: 1.0),
           ),
         ));
 
@@ -115,10 +108,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           ),
-          enabledBorder: OutlineInputBorder(
-            borderSide:
-            BorderSide(color: Colors.black, width: 1.0),
-          ),
         ));
 
     //password field
@@ -146,10 +135,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           ),
-          enabledBorder: OutlineInputBorder(
-            borderSide:
-            BorderSide(color: Colors.black, width: 1.0),
-          ),
         ));
 
     //confirm password field
@@ -175,10 +160,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(10),
           ),
-          enabledBorder: OutlineInputBorder(
-            borderSide:
-            BorderSide(color: Colors.black, width: 1.0),
-          ),
         ));
 
     //signup button
@@ -188,10 +169,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       color: Colors.black,
       child: MaterialButton(
           padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
-          minWidth: MediaQuery
-              .of(context)
-              .size
-              .width,
+          minWidth: MediaQuery.of(context).size.width,
           onPressed: () {
             signUp(emailEditingController.text, passwordEditingController.text);
           },
@@ -204,12 +182,12 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
     );
 
     return Scaffold(
-      backgroundColor: Colors.yellow,
+      backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.black),
+          icon: Icon(Icons.arrow_back, color: Colors.white),
           onPressed: () {
             // passing this to our root
             Navigator.of(context).pop();
@@ -219,7 +197,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       body: Center(
         child: SingleChildScrollView(
           child: Container(
-            color: Colors.yellow,
+            color: Colors.white,
             child: Padding(
               padding: const EdgeInsets.all(36.0),
               child: Form(
@@ -229,10 +207,11 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: <Widget>[
                     SizedBox(
-                      height: 200,
-                      child: Image.network(
-                          "https://cdn-icons-png.flaticon.com/512/295/295128.png"),
-                    ),
+                        height: 180,
+                        child: Image.network(
+                          "https://us.123rf.com/450wm/jimbrow/jimbrow2102/jimbrow210200681/164660668-mtb-downhill-bike-logo-icon-design.jpg?ver=6",
+                          fit: BoxFit.contain,
+                        )),
                     SizedBox(height: 45),
                     firstNameField,
                     SizedBox(height: 20),
@@ -255,7 +234,6 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       ),
     );
   }
-
   void signUp(String email, String password) async {
     if (_formKey.currentState!.validate()) {
       try {
@@ -293,11 +271,16 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
       }
     }
   }
-
   postDetailsToFirestore() async {
     // calling our firestore
     // calling our user model
     // sedning these values
     // writing all the values
+
+
+    Navigator.pushAndRemoveUntil(
+        (context),
+        MaterialPageRoute(builder: (context) => HomeScreen()),
+            (route) => false);
   }
 }
